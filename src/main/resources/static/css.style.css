@@ -1,0 +1,151 @@
+/* style.css */
+
+/* --- Google Font Import (from your HTML) --- */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* --- General Body and Layout Styles --- */
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: #f0f2f5; /* A light grey background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- Main To-Do Container --- */
+.todo-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+    margin: 20px;
+}
+
+/* --- Header --- */
+.todo-header h4 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* --- Input Form --- */
+.todo-input {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 10px 5px;
+    font-size: 1.1rem;
+    flex-grow: 1; /* Allows input to take available space */
+    transition: border-color 0.3s ease;
+}
+
+.todo-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom-color: #3498db; /* Highlight color on focus */
+}
+
+.btn-add {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #2980b9;
+}
+
+.btn-add span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+/* --- To-Do List Items --- */
+.todo-list {
+    margin-top: 20px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #ecf0f1;
+    transition: background-color 0.2s ease;
+}
+
+.todo-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.todo-item:hover {
+    background-color: #fafafa;
+}
+
+.todo-text {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Style for completed tasks */
+.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+/* --- Icons and Action Buttons --- */
+.unchecked-icon, .check-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.unchecked-icon {
+    color: #bdc3c7;
+}
+
+.unchecked-icon:hover {
+    color: #3498db;
+}
+
+.check-icon {
+    color: #2ecc71; /* Green color for completed */
+}
+
+.delete-btn {
+    color: #e74c3c; /* Red color for delete */
+    text-decoration: none;
+    font-weight: 600;
+    visibility: hidden; /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+/* Show delete button on item hover */
+.todo-item:hover .delete-btn {
+    visibility: visible;
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    color: #c0392b;
+}
+
+.delete-btn .fas {
+    margin-right: 5px;
+}
